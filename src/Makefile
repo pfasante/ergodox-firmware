@@ -120,7 +120,7 @@ all: $(TARGET).hex $(TARGET).eep
 clean:
 	@echo
 	@echo --- cleaning ---
-	git clean -dX -f # remove ignored files and directories
+	find . -name "*.o" -o -name "*.o.dep" -exec rm {} +
 
 # -----------------------------------------------------------------------------
 
@@ -153,7 +153,7 @@ clean:
 %.o: %.c
 	@echo
 	@echo --- making $@ ---
-	$(CC) -c $(strip $(CFLAGS)) $(strip $(GENDEPFLAGS)) $< -o $@ 
+	$(CC) -c $(strip $(CFLAGS)) $(strip $(GENDEPFLAGS)) $< -o $@
 
 # -----------------------------------------------------------------------------
 
