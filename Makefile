@@ -20,9 +20,9 @@
 
 # which layouts to compile (will override the variable in src/makefile-options)
 # --- default
-LAYOUT := qwerty-kinesis-mod
+LAYOUT := qwertz-neo2
 # --- all
-LAYOUTS := qwerty-kinesis-mod dvorak-kinesis-mod colemak-symbol-mod workman-p-kinesis-mod
+LAYOUTS := qwertz-neo2
 
 # name to use for the final distribution file or package
 TARGET := ergodox-firmware--$(LAYOUT)
