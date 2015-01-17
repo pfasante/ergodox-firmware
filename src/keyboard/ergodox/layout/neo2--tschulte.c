@@ -159,13 +159,13 @@ TYPE__SHIFTED(    dead_grave,     KEYBOARD__Equal_Plus                 );
 TYPE__DEFAULT(    dead_caret,     KEYBOARD__GraveAccent_Tilde          );
 
 TYPE__NON_DEAD(   aigu,           KEYBOARD__Equal_Plus                 );
-TYPE__NON_DEAD_SHIFTED(   grave,  KEYBOARD__Equal_Plus                 );
+TYPE__NON_DEAD_SHIFTED(   grave,          KEYBOARD__Equal_Plus                 );
 TYPE__NON_DEAD(   caret,          KEYBOARD__GraveAccent_Tilde          );
 
 
 // --- (shifted) ---
 TYPE__SHIFTED(    parenL,         KEYBOARD__8_Asterisk                 );
-TYPE__SHIFTED(    parenR,         KEYBOARD__9_LeftParenthesis          );
+TYPE__SHIFTED(    parenR,         KEYBOARD__9_LeftParenthesis);
 TYPE__SHIFTED(    exclam,         KEYBOARD__1_Exclamation              );
 TYPE__ALT_GR (    at,             KEYBOARD__q_Q                        );
 TYPE__SHIFTED(    dollar,         KEYBOARD__4_Dollar                   );
@@ -176,7 +176,7 @@ TYPE__SHIFTED(    asterisk,       KEYBOARD__RightBracket_RightBrace    );
 
 // ---
 TYPE__ALT_GR (    bkslash,        KEYBOARD__Dash_Underscore            );
-TYPE__ALT_GR (    brktL,          KEYBOARD__8_Asterisk                 );
+TYPE__ALT_GR (    brktL,          KEYBOARD__8_Asterisk);
 TYPE__ALT_GR (    brktR,          KEYBOARD__9_LeftParenthesis          );
 TYPE__DEFAULT(    comma,          KEYBOARD__Comma_LessThan             );
 TYPE__DEFAULT(    dash,           KEYBOARD__Slash_Question             );
@@ -251,182 +251,106 @@ TYPE__DEFAULT(    nonUSPound,     KEYBOARD__NonUS_Pound_Tilde          );
 // ----------------------------------------------------------------------------
 // layout
 // ----------------------------------------------------------------------------
+
+// TODO: make this Arensito!
+// - add layers with other layouts? arensito, colemak, dvorak, qwerty
 static layout_t layout PROGMEM = {
 // ............................................................................
 
-MATRIX_LAYER(  // layer 0 : default qwertz
+    MATRIX_LAYER(  // layer 0 : default
 // macro, unused,
-	K,    nop,
+       K,    nop,
 // left hand ...... ......... ......... ......... ......... ......... .........
-	esc,	1,		2,		3,		4,		5,	nop,
-	tab,	q,		w,		e,		r,		t,	bs,
-	caps,	a,		s,		d,		f,		g,
-	shiftL,	y,		x,		c,		v,		b,	enter,
-	ctrlL,	altL,	nop,	arrowL,	arrowR,
-															lpu1l1,		nop,
-													nop,	nop,		shiftL,
-													space,	lessThan,	guiL,
+     nop,        1,        2,        3,        4,        5,      dead_caret,
+     nop,        x,        v,        l,        c,        w,      pageU,
+     tab,        u,        i,        a,        e,        o,
+     nop,        ue,       oe,       ae,       p,        z,      pageD,
+     app,        guiL,     nop,      nop,      lpupo2l2,
+                                                                          lpupo1l1, lpupo3l3,
+                                                                nop,      nop,      altL,
+                                                                lpupo1l1, shiftL,   ctrlL,
 // right hand ..... ......... ......... ......... ......... ......... .........
-							nop,	6,		7,		8,		9,		0,		sz,
-							del,	z,		u,		i,		o,		p,		ue,
-									h,		j,		k,		l,		oe,		ae,
-							enter,	n,		m,		comma,	period,	dash,	shiftL,
-											arrowD,	arrowU,	nop,	altR,	ctrlR,
-		nop,	lpu1l1,
-		shiftR,	nop,	nop,
-		ctrlR,	pound,	space
-),
+               dead_aigu,     6,        7,        8,        9,        0,      dead_grave,
+               enter,         k,        h,        g,        f,        q,      sz,
+                              s,        n,        r,        t,        d,      y,
+               del,           b,        m,        comma,    period,   j,      bs,
+                                        lpupo2l2, nop,      esc,      guiR,   nop,
+   lpupo3l3, lpupo1l1,
+   altL,     nop,      nop,
+   ctrlR,    shiftR,   space  ),
 
 // ............................................................................
 
-MATRIX_LAYER(  // layer 1 : neo
+    MATRIX_LAYER(  // layer TODO : symbols and function keys
 // macro, unused,
-	K,    nop,
+       K,    nop,
 // left hand ...... ......... ......... ......... ......... ......... .........
-		esc,		1,		2,		3,		4,		5,	nop,
-		tab,		x,		v,		l,		c,		w,	bs,
-		lpupo3l3,	u,		i,		a,		e,		o,
-		lpupo2l2,	ue,		oe,		ae,		p,		z,	enter,
-		ctrlL,		altL,	nop,	arrowL,	arrowR,
-																		lpo1l1,		nop,
-																nop,	nop,		shiftL,
-																space,	lpupo4l4,	guiL,
+  transp,      transp,     transp,     transp,      transp,    transp,    transp,
+  transp,      nop,        undersc,    brktL,       brktR,     caret,     transp,
+  transp,      bkslash,    slash,      braceL,      braceR,    asterisk,
+  transp,      pound,      dollar,     pipe,        tilde,     grave,     transp,
+  transp,      transp,     transp,     transp,      transp,
+                                                                          transp,   transp,
+                                                                transp,   transp,   transp,
+                                                                transp,   transp,   transp,
 // right hand ..... ......... ......... ......... ......... ......... .........
-								nop,	6,		7,		8,		9,		0,		dash,
-								del,	k,		h,		g,		f,		q,		sz,
-										s,		n,		r,		t,		d,		y,
-								enter,	b,		m,		comma,	period,	j,		lpupo2l2,
-												arrowD,	arrowU,	nop,	lpupo4l4,	ctrlR,
-		nop,	lpo1l1,
-		shiftR,	nop,		nop,
-		ctrlR,	lpupo3l3,	space
-),
+               transp,   transp,       transp,      transp,     transp,   transp,      transp,
+               transp,   exclam,       lessThan,    grtrThan,   equal,    amp,         transp,
+                         question,     parenL,      parenR,     dash,     colon,       at,
+               transp,   plus,         percent,     dblQuote,   quote,    semicol,     transp,
+                                       transp,      transp,     transp,   transp,      transp,
+  transp,   transp,
+  transp,   transp,   transp,
+  transp,   transp,   transp  ),
 
 // ............................................................................
 
-MATRIX_LAYER(  // layer 2 : neo layer 2
+    MATRIX_LAYER(  // layer TODO : keyboard functions
 // macro, unused,
-	K,    nop,
+       K,    nop,
 // left hand ...... ......... ......... ......... ......... ......... .........
-		esc,		nop,	nop,	nop,	nop,	nop,	nop,
-		tab,		X,		V,		L,		C,		W,		bs,
-		lpupo5l5,	U,		I,		A,		E,		O,
-		nop,		UE,		OE,		AE,		p,		Z,		enter,
-		ctrlL,		altL,	nop,	arrowL,	arrowR,
-																			lpo1l1,	nop,
-																	nop,	nop,	shiftL,
-																	space,	nop,	guiL,
+   btldr,       transp,      transp,      transp,      transp,      transp,      transp,
+   transp,      pageU,       bs,          arrowU,      del,         pageD,       transp,
+   transp,      home,        arrowL,      arrowD,      arrowR,      end,
+   transp,      transp,      tab,         transp,      enter,       transp,      transp,
+   transp,      transp,      transp,      transp,      transp,
+                                                                                  transp,      transp,
+                                                                     transp,      transp,      transp,
+                                                                     transp,      transp,      transp,
 // right hand ..... ......... ......... ......... ......... ......... .........
-								nop,	dollar,	eur,	nop,	nop,	nop,	nop,
-								del,	K,		H,		G,		F,		Q,		SZ,
-										S,		N,		R,		T,		D,		Y,
-								enter,	B,		M,		dash,	nop,	J,		nop,
-												arrowD,	arrowU,	nop,	altR,	ctrlR,
-		nop,	lpo1l1,
-		shiftR,	nop,		nop,
-		ctrlR,	lpupo5l5,	space
-),
+               transp,      transp,      transp,      transp,      transp,      transp,     transp,
+               transp,      transp,      kp7,         kp8,         kp9,         plus,       dash,
+                            transp,      kp4,         kp5,         kp6,         comma,      period,
+               transp,      transp,      kp1,         kp2,         kp3,         semicol,    transp,
+                                         kp0,         transp,      transp,      transp,     transp,
+     transp,      transp,
+     transp,      transp,      transp,
+     transp,      transp,      transp  ),
 
 // ............................................................................
-
-MATRIX_LAYER(  // layer 3 : neo layer 3
+    MATRIX_LAYER(  // layer for F1-F12
 // macro, unused,
-	K,    nop,
+       K,    nop,
 // left hand ...... ......... ......... ......... ......... ......... .........
-		esc,		nop,	nop,	nop,	nop,	nop,	nop,
-		tab,		nop,	undersc,brktL,	braceR,	caret,	bs,
-		nop,		bkslash,slash,	braceL,	braceR,	asterisk,
-		lpupo5l5,	pound,	dollar,	pipe,	tilde,	grave,	enter,
-		ctrlL,		altL,	nop,	arrowL,	arrowR,
-																			lpo1l1,		nop,
-																	nop,	nop,		shiftL,
-																	space,	lpupo6l6,	guiL,
+  btldr,       F1,         F2,         F3,          F4,        F5,        F6,
+  transp,      transp,     transp,     transp,      transp,    transp,    transp,
+  transp,      transp,     transp,     transp,      transp,    transp,
+  transp,      transp,     transp,     transp,      transp,    transp,    transp,
+  transp,      transp,     transp,     transp,      transp,
+                                                                          transp,   transp,
+                                                                transp,   transp,   transp,
+                                                                transp,   transp,   transp,
 // right hand ..... ......... ......... ......... ......... ......... .........
-								nop,	nop,	nop,	nop,	nop,	nop,	nop,
-								del,	exclam,	lessThan,grtrThan,equal,amp,	nop,
-										question,parenL,parenR,	dash,	colon,	at,
-								enter,	plus,	percent,dblQuote,quote,	semicol,lpupo5l5,
-												arrowD,	arrowU,	nop,	lpupo6l6,	ctrlR,
-		nop,	lpo1l1,
-		shiftR,	nop,	nop,
-		ctrlR,	nop,	space
-),
-
-// ............................................................................
-
-MATRIX_LAYER(  // layer 4 : neo layer 4
-// macro, unused,
-	K,    nop,
-// left hand ...... ......... ......... ......... ......... ......... .........
-		esc,		nop,	nop,	nop,	nop,	nop,	nop,
-		tab,		pageU,	bs,		arrowU,	del,	pageD,	bs,
-		lpupo6l6,	home,	arrowL,	arrowD,	arrowR,	end,
-		nop,		nop,	tab,	ins,	enter,	nop,	enter,
-		ctrlL,		altL,	nop,	arrowL,	arrowR,
-																			lpo1l1,		nop,
-																	nop,	nop,		shiftL,
-																	space,	nop,		guiL,
-// right hand ..... ......... ......... ......... ......... ......... .........
-								nop,	nop,	nop,	kpDiv,	kpMul,	nop,	nop,
-								del,	nop,	kp7,	kp8,	kp9,	kpAdd,	kpSub,
-										nop,	kp4,	kp5,	kp6,	comma,	period,
-								enter,	colon,	kp1,	kp2,	kp3,	semicol,nop,
-												arrowD,	arrowU,	nop,	altR,	ctrlR,
-		nop,	lpo1l1,
-		shiftR,	nop,		nop,
-		ctrlR,	lpupo6l6,	kp0
-),
-
-// ............................................................................
-
-MATRIX_LAYER(  // layer 5 : neo layer 5
-// macro, unused,
-	K,    nop,
-// left hand ...... ......... ......... ......... ......... ......... .........
-		esc,		nop,	nop,	nop,	nop,	nop,	nop,
-		tab,		nop,	nop,	nop,	nop,	nop,	bs,
-		nop,		nop,	nop,	nop,	nop,	nop,
-		nop,		nop,	nop,	nop,	nop,	nop,	enter,
-		ctrlL,		altL,	nop,	arrowL,	arrowR,
-																			lpo1l1,		nop,
-																	nop,	nop,		shiftL,
-																	space,	nop,		guiL,
-// right hand ..... ......... ......... ......... ......... ......... .........
-								nop,	nop,	nop,	nop,	nop,	nop,	nop,
-								del,	nop,	nop,	nop,	nop,	nop,	nop,
-										nop,	nop,	nop,	nop,	nop,	nop,
-								enter,	nop,	nop,	nop,	nop,	nop,	nop,
-												arrowD,	arrowU,	nop,	altR,	ctrlR,
-		nop,	lpo1l1,
-		shiftR,	nop,		nop,
-		ctrlR,	nop,		space
-),
-
-// ............................................................................
-
-MATRIX_LAYER(  // layer 6 : neo layer 6
-// macro, unused,
-	K,    nop,
-// left hand ...... ......... ......... ......... ......... ......... .........
-		esc,		nop,	nop,	nop,	nop,	nop,	nop,
-		tab,		nop,	nop,	nop,	nop,	nop,	bs,
-		nop,		nop,	nop,	nop,	nop,	nop,
-		nop,		nop,	nop,	nop,	nop,	nop,	enter,
-		ctrlL,		altL,	nop,	arrowL,	arrowR,
-																			lpo1l1,		nop,
-																	nop,	nop,		shiftL,
-																	space,	nop,		guiL,
-// right hand ..... ......... ......... ......... ......... ......... .........
-								nop,	nop,	nop,	nop,	nop,	nop,	nop,
-								del,	nop,	nop,	nop,	nop,	nop,	nop,
-										nop,	nop,	nop,	nop,	nop,	nop,
-								enter,	nop,	nop,	nop,	nop,	nop,	nop,
-												arrowD,	arrowU,	nop,	altR,	ctrlR,
-		nop,	lpo1l1,
-		shiftR,	nop,		nop,
-		ctrlR,	nop,		space
-),
+               F7,       F8,           F9,          F10,        F11,      F12,         transp,
+               transp,   transp,       transp,      transp,     transp,   transp,      transp,
+                         transp,       transp,      transp,     transp,   transp,      transp,
+               transp,   transp,       transp,      transp,     transp,   transp,      transp,
+                                       transp,      transp,     transp,   transp,      transp,
+  transp,   transp,
+  transp,   transp,   transp,
+  transp,   transp,   transp  ),
 
 // ............................................................................
 
 };
+

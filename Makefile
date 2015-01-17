@@ -18,9 +18,6 @@
 # Project located at <https://github.com/benblazak/ergodox-firmware>
 # -----------------------------------------------------------------------------
 
-
-include src/makefile-options
-
 # which layouts to compile (will override the variable in src/makefile-options)
 # --- default
 LAYOUT := qwerty-kinesis-mod
