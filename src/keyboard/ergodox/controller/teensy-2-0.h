@@ -17,7 +17,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-#include "../../../../firmware/keyboard.h"
+#include "../../../keyboard.h"
 
 // ----------------------------------------------------------------------------
 

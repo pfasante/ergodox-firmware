@@ -196,7 +196,7 @@ void KF(2_keys_capslock)(bool pressed, uint8_t keycode) {
 
 // --- default key definitions ------------------------------------------------
 
-#include "../../../../../firmware/lib/layout/keys.h"
+#include "../../../../lib/layout/keys.h"
 
 
 // --- special meaning --------------------------------------------------------

@@ -14,8 +14,8 @@
 #include <stdint.h>
 #include <avr/io.h>
 #include <util/delay.h>
-#include "../../../../firmware/keyboard.h"
-#include "../../../../firmware/lib/twi.h"
+#include "../../../keyboard.h"
+#include "../../../lib/twi.h"
 #include "./teensy-2-0.h"
 
 // ----------------------------------------------------------------------------
@@ -36,17 +36,17 @@
  * - `OPT__TEENSY__DRIVE_ROWS`
  * - `OPT__TEENSY__DRIVE_COLUMNS`
  *
- * 
+ *
  * Notes:
  *
  * - You must set exactly one of these variables to `1`, and the other to `0`
  *
  * - If you are using internal diodes (inside the key switches), set
  *   `OPT__TEENSY__DRIVE_COLUMNS` to `1`
- * 
+ *
  * - If the diode cathode is towards the square solder pad, set
  *   `OPT__TEENSY__DRIVE_COLUMNS` to `1`
- * 
+ *
  * - If the diode cathode is towards the circular solder pad, set
  *   `OPT__TEENSY__DRIVE_ROWS` to `1`
  */

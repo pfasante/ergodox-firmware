@@ -17,11 +17,11 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <avr/pgmspace.h>
-#include "../../../../../firmware/lib/timer.h"
-#include "../../../../../firmware/lib/usb.h"
-#include "../../../../../firmware/lib/usb/usage-page/keyboard.h"
-#include "../../../../../firmware/lib/layout/eeprom-macro.h"
-#include "../../../../../firmware/lib/layout/key-functions.h"
-#include "../../../../../firmware/lib/layout/layer-stack.h"
-#include "../../../../../firmware/keyboard.h"
+#include "../../../../lib/timer.h"
+#include "../../../../lib/usb.h"
+#include "../../../../lib/usb/usage-page/keyboard.h"
+#include "../../../../lib/layout/eeprom-macro.h"
+#include "../../../../lib/layout/key-functions.h"
+#include "../../../../lib/layout/layer-stack.h"
+#include "../../../../keyboard.h"
 

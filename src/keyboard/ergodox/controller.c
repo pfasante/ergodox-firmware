@@ -12,8 +12,8 @@
 #include <stdint.h>
 #include "./controller/mcp23018.h"
 #include "./controller/teensy-2-0.h"
-#include "../../../firmware/lib/layout/eeprom-macro.h"
-#include "../../../firmware/keyboard.h"
+#include "../../lib/layout/eeprom-macro.h"
+#include "../../keyboard.h"
 
 // ----------------------------------------------------------------------------
 

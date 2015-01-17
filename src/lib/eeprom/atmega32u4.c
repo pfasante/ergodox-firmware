@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <util/atomic.h>
 #include <avr/io.h>
-#include "../../../firmware/lib/timer.h"
+#include "../timer.h"
 #include "../eeprom.h"
 
 // ----------------------------------------------------------------------------

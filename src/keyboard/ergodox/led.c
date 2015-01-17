@@ -14,7 +14,7 @@
 #include <stdint.h>
 #include <avr/io.h>
 #include <util/delay.h>
-#include "../../../firmware/keyboard.h"
+#include "../../keyboard.h"
 
 // ----------------------------------------------------------------------------
 
@@ -69,7 +69,7 @@ void kb__led__set(uint8_t led, float n) {
     };
 }
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 bool kb__led__read(uint8_t led) {
     switch(led) {
@@ -82,7 +82,7 @@ bool kb__led__read(uint8_t led) {
     return false;
 }
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 void kb__led__all_on(void) {
     for (uint8_t i=1; i<=3; i++)
@@ -99,7 +99,7 @@ void kb__led__all_set(float n) {
         kb__led__set(i, n);
 }
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 void kb__led__state__power_on(void) {
     kb__led__all_set( OPT__LED_BRIGHTNESS / 10 );

@@ -14,7 +14,7 @@
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
 #include <util/delay.h>
-#include "../../../../../firmware/lib/eeprom.h"
+#include "../../../eeprom.h"
 #include "../../key-functions.h"
 
 // ----------------------------------------------------------------------------

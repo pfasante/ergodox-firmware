@@ -59,8 +59,8 @@
 
 
 #include <stdint.h>
-#include "../../../../firmware/keyboard.h"
-#include "../../../../firmware/lib/eeprom.h"
+#include "../../../keyboard.h"
+#include "../../../lib/eeprom.h"
 #include "../eeprom-macro.h"
 
 // ----------------------------------------------------------------------------
@@ -315,7 +315,7 @@ static uint8_t read_key_action(void * from, key_action_t * k) {
     // handle the first byte
     // - since this byte (and no others) stores the value of `k->pressed`
     // - also, this allows us to avoid `|=` in favor of `=` for this byte
-    
+
     byte = eeprom__read(from++);
     uint8_t read = 1;
 

@@ -13,8 +13,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <util/twi.h>
-#include "../../../../firmware/keyboard.h"
-#include "../../../../firmware/lib/twi.h"
+#include "../../../keyboard.h"
+#include "../../../lib/twi.h"
 #include "./mcp23018.h"
 
 // ----------------------------------------------------------------------------
@@ -31,17 +31,17 @@
  * - `OPT__MCP23018__DRIVE_ROWS`
  * - `OPT__MCP23018__DRIVE_COLUMNS`
  *
- * 
+ *
  * Notes:
  *
  * - You must set exactly one of these variables to `1`, and the other to `0`
  *
  * - If you are using internal diodes (inside the key switches), set
  *   `OPT__MCP23018__DRIVE_ROWS` to `1`
- * 
+ *
  * - If the diode cathode is towards the square solder pad, set
  *   `OPT__MCP23018__DRIVE_COLUMNS` to `1`
- * 
+ *
  * - If the diode cathode is towards the circular solder pad, set
  *   `OPT__MCP23018__DRIVE_ROWS` to `1`
  */
