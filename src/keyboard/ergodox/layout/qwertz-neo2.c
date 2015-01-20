@@ -106,9 +106,9 @@ TYPE__SHIFTED(    X,              KEYBOARD__x_X                        );
 TYPE__SHIFTED(    Y,              KEYBOARD__z_Z                        );
 TYPE__SHIFTED(    Z,              KEYBOARD__y_Y                        );
 TYPE__DEFAULT(    SZ,             KEYBOARD__Dash_Underscore            );
-TYPE__DEFAULT(    UE,             KEYBOARD__LeftBracket_LeftBrace      );
-TYPE__DEFAULT(    OE,             KEYBOARD__Semicolon_Colon            );
-TYPE__DEFAULT(    AE,             KEYBOARD__SingleQuote_DoubleQuote    );
+TYPE__SHIFTED(    UE,             KEYBOARD__LeftBracket_LeftBrace      );
+TYPE__SHIFTED(    OE,             KEYBOARD__Semicolon_Colon            );
+TYPE__SHIFTED(    AE,             KEYBOARD__SingleQuote_DoubleQuote    );
 
 // numbers
 TYPE__DEFAULT(    0,              KEYBOARD__0_RightParenthesis         );
@@ -311,7 +311,7 @@ MATRIX_LAYER(  // layer 2 : neo layer 2
 		esc,		nop,	nop,	nop,	nop,	nop,	esc,
 		tab,		X,		V,		L,		C,		W,		bs,
 		lpupo5l5,	U,		I,		A,		E,		O,
-		nop,		UE,		OE,		AE,		p,		Z,		enter,
+		nop,		UE,		OE,		AE,		P,		Z,		enter,
 		ctrlL,		altL,	nop,	arrowL,	arrowR,
 																			lpo1l1,	nop,
 																	nop,	nop,	shiftL,
